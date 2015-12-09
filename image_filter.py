@@ -39,7 +39,7 @@ def filter(img):
     return ch(img)
 
 def many_filters(img):
-    runs = random.choice([2,3,4,5,6])
+    runs = random.choice([6,7,8,9,20])
     if verbose: print("{} filters".format(runs))
     for i in range(runs):
         img = filter(img)
@@ -58,5 +58,7 @@ if __name__=="__main__":
         output_path = sys.argv[1]
 
 
+    img = img.convert('RGB')
+    img = img.thumbnail((400,400), Image.ANTIALIAS)
 
-    img.resize((400,400)).save(output_path)
+    img.save(output_path)

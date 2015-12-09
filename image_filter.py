@@ -45,5 +45,5 @@ def many_filters(img):
 
 if __name__=="__main__":
     print("filter")
-    img = many_filters(image_grab.get_image("pixel","glitch","brutalist","vhs","hacker","gif","cat","dog","architecture","brutalism"))
-    img.resize((400,400)).show()
+    img = many_filters(image_grab.get_image("art deco","pixel","glitch","brutalist","vhs","hacker","gif","cat","dog","architecture","brutalism","jazz"))
+    img.resize((400,400)).save("output.png")

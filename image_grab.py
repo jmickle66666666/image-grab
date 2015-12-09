@@ -1,15 +1,11 @@
-import random, requests, pytumblr
+import random, requests, pytumblr,json
 from PIL import Image
 from StringIO import StringIO
 
 def tumblr_image_search(search_term):
-    api_key = '6xqaiTlHrTb8H3fesP1ulOgM90YE0lZlUlyi4vQEjGPOPScSfq'
-    client = pytumblr.TumblrRestClient(
-      '6xqaiTlHrTb8H3fesP1ulOgM90YE0lZlUlyi4vQEjGPOPScSfq',
-      'zuDWY12WIu9pGsrY9BgqONxGzfwRrz1yhzwKe0YDVyMqZa3oX4',
-      'RnlGq73Shc5idVeD5eDjOtENPV87DpMA7hhw5BWKsvtV2Z0HnE',
-      'lqA3owfHGzM6HVz0GIhvdtBjskyczwH6UbUZyojIC0p3ZkRFzr'
-    )
+    with open('client_keys.json') as data_file:    
+        data = json.load(data_file)
+    api_key = data['tumblr_api_key']
 
     url = 'http://api.tumblr.com/v2/tagged'
 
